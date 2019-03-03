@@ -1,0 +1,12 @@
+mkcd () {
+  # Make and change into directory.
+  # Copied from 'mkcdir' at https://unix.stackexchange.com/questions/125385/combined-mkdir-and-cd
+  mkdir -p -- "$1" &&
+  cd    -P -- "$1"
+}
+
+rmcd () {
+  # Delete current directory.
+  cd ..
+  rm -r $OLDPWD
+}
